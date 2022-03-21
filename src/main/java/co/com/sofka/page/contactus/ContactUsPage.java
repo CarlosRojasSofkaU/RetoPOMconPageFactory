@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import static io.cucumber.messages.internal.com.google.common.base.StandardSystemProperty.USER_DIR;
 
 public class ContactUsPage extends CommonActionOnPages {
-    private static final Logger LOGGER = Logger.getLogger(ContactUsModel.class);
+    private static final Logger LOGGER = Logger.getLogger(ContactUsPage.class);
     private ContactUsModel contactUsModel;
     private static final String MODEL_NULL_MESSAGE = "El modelo del formulario es nulo.";
 
@@ -40,6 +40,10 @@ public class ContactUsPage extends CommonActionOnPages {
     @CacheLookup
     @FindBy(xpath = "/html/body/div[1]/div[3]/div[2]/p[1]")
     private WebElement assertionName;
+
+    @CacheLookup
+    @FindBy(id = "message.errors")
+    private WebElement assertionMessageError;
 
     //constructor
     public ContactUsPage(WebDriver driver, ContactUsModel contactUsModel) {
@@ -76,8 +80,33 @@ public class ContactUsPage extends CommonActionOnPages {
 
     }
 
+    public void fillContactUsFormWithoutMessage() throws InterruptedException {
+        scrollOn(name);
+        clearOn(name);
+        typeOn(name, contactUsModel.getName());
+
+        scrollOn(email);
+        clearOn(email);
+        typeOn(email, contactUsModel.getEmail());
+
+        scrollOn(phone);
+        clearOn(phone);
+        typeOn(phone, contactUsModel.getPhone());
+
+        scrollOn(message);
+        clearOn(message);
+
+        doSubmit(submit);
+
+    }
+
     public String isRegistrationDone(){
         String submitedFormResul = getText(assertionName).trim();
+        return submitedFormResul;
+    }
+
+    public String registrationIsNotDoneMessageError(){
+        String submitedFormResul = getText(assertionMessageError).trim();
         return submitedFormResul;
     }
 }

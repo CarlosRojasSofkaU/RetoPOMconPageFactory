@@ -24,7 +24,7 @@ public class ContactUsStepDefinition extends WebUI {
         try{
             setUpLog4j2();
             setUpWebDriver();
-            generalStUp();
+            generalStUp(1);
 
             contactUsModel = new ContactUsModel();
             contactUsModel.setName("Iván");
@@ -43,9 +43,21 @@ public class ContactUsStepDefinition extends WebUI {
     public void elClienteIngresaLosCamposObligatoriosYConfirmaLaAccion() {
         try{
             contactUsPage = new ContactUsPage(driver, contactUsModel, TEN_SECONDS.getValue());
-            //contactUsPage = new ContactUsPage(driver, contactUsModel);
 
             contactUsPage.fillContactUsForm();
+
+        } catch (Exception exception){
+            quiteDriver();
+            Assertions.fail(exception.getMessage(), exception);
+            LOGGER.error(exception.getMessage(), exception);
+        }
+    }
+    @Cuando("el cliente ingresa los campos obligatorios menos el de mensaje y confirma la accion")
+    public void elClienteIngresaLosCamposObligatoriosMenosElDeMensajeYConfirmaLaAccion() {
+        try{
+            contactUsPage = new ContactUsPage(driver, contactUsModel, TEN_SECONDS.getValue());
+
+            contactUsPage.fillContactUsFormWithoutMessage();
 
         } catch (Exception exception){
             quiteDriver();
@@ -56,6 +68,11 @@ public class ContactUsStepDefinition extends WebUI {
     @Entonces("el sistema debera mostrar en pantalla un mensaje de agradecimiento con el nombre del cliente")
     public void elSistemaDeberaMostrarEnPantallaUnMensajeDeAgradecimientoConElNombreDelCliente() {
         Assertions.assertEquals(forSubmittedForm(), contactUsPage.isRegistrationDone());
+        quiteDriver();
+    }
+    @Entonces("el sistema debera mostrar en pantalla un mensaje de error diciendo que el campo mensaje es requerido")
+    public void elSistemaDeberaMostrarEnPantallaUnMensajeDeErrorDiciendoQueElCampoMensajeEsRequerido() {
+        Assertions.assertEquals("Message is required.", contactUsPage.registrationIsNotDoneMessageError());
         quiteDriver();
     }
 

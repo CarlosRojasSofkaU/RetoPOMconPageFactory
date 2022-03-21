@@ -23,7 +23,7 @@ public class ContactUsTest extends WebUI {
         try{
             setUpLog4j2();
             setUpWebDriver();
-            generalStUp();
+            generalStUp(1);
 
             contactUsModel = new ContactUsModel();
             contactUsModel.setName("Iván");
@@ -48,6 +48,22 @@ public class ContactUsTest extends WebUI {
             contactUsPage.fillContactUsForm();
 
             Assertions.assertEquals(forSubmittedForm(), contactUsPage.isRegistrationDone());
+
+        } catch (Exception exception){
+            quiteDriver();
+            Assertions.fail(exception.getMessage(), exception);
+            LOGGER.error(exception.getMessage(), exception);
+        }
+    }
+
+    @Test
+    public void contactUsFormWithoutMessage(){
+        try{
+            ContactUsPage contactUsPage = new ContactUsPage(driver, contactUsModel, TEN_SECONDS.getValue());
+
+            contactUsPage.fillContactUsFormWithoutMessage();
+
+            Assertions.assertEquals("Message is required.", contactUsPage.registrationIsNotDoneMessageError());
 
         } catch (Exception exception){
             quiteDriver();
