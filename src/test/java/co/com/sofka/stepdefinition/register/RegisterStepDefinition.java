@@ -40,7 +40,7 @@ public class RegisterStepDefinition extends WebUI {
             registerModel.setZipCode("660001");
             //registerModel.setPhone("3113305865");
             registerModel.setSsn("123456789");
-            registerModel.setUsername("Calyman" + String.valueOf(rand.nextInt(1000)));
+            registerModel.setUsername("Calymano" + String.valueOf(rand.nextInt(10000)));
             registerModel.setPassword("12345");
             registerModel.setConfirmationPassword(registerModel.getPassword());
 
@@ -85,6 +85,7 @@ public class RegisterStepDefinition extends WebUI {
     @Entonces("el sistema debera mostrar en pantalla un mensaje de error indicando que la contrasena y la confirmacion de la contrasena son diferentes.")
     public void elSistemaDeberaMostrarEnPantallaUnMensajeDeErrorIndicandoQueLaContrasenaYLaConfirmacionDeLaContrasenaSonDiferentes() {
         Assertions.assertEquals("Passwords did not match.", registerPage.RegistrationIsNotDonePasswordsMissMatch());
+        quiteDriver();
     }
 
     private List<String> forSubmittedForm(){

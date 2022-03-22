@@ -2,7 +2,7 @@
 
 Característica: Como cliente de parabank
     necesito contactarme con el servicio al cliente
-    con el fin de que le den una solucion a mi problematica
+    con el fin de que le den una solucion a mi problematica.
 
     Antecedentes: que el cliente se encuentra en la pagina web de contactanos.
 

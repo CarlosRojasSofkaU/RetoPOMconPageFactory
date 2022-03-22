@@ -2,7 +2,7 @@
 
 Característica: Como cliente de parabank
   necesito registrarme en la plataforma de parabank
-  con el fin de poder obtener una cuenta en la plataforma
+  con el fin de poder obtener una cuenta en la plataforma.
 
   Antecedentes: que el cliente se encuentra en la pagina web de registrarse
 
