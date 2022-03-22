@@ -14,7 +14,7 @@ import static co.com.sofka.util.Seconds.TEN_SECONDS;
 
 public class ContactUsStepDefinition extends WebUI {
 
-    private static final Logger LOGGER = Logger.getLogger(ContactUsTestCucumber.class);
+    private static final Logger LOGGER = Logger.getLogger(ContactUsStepDefinition.class);
 
     private ContactUsModel contactUsModel;
     private ContactUsPage contactUsPage;

@@ -17,7 +17,7 @@ import static co.com.sofka.util.Seconds.TEN_SECONDS;
 
 public class LogInStepDefinition extends WebUI {
 
-    private static final Logger LOGGER = Logger.getLogger(LogInTestCucumber.class);
+    private static final Logger LOGGER = Logger.getLogger(LogInStepDefinition.class);
 
     private LogInModel logInModel;
     private LogInPage logInPage;

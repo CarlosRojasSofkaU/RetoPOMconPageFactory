@@ -18,7 +18,7 @@ import static co.com.sofka.util.Seconds.TEN_SECONDS;
 
 public class RegisterStepDefinition extends WebUI {
 
-    private static final Logger LOGGER = Logger.getLogger(RegisterTestCucumber.class);
+    private static final Logger LOGGER = Logger.getLogger(RegisterStepDefinition.class);
 
     private Random rand = new Random();
     private RegisterModel registerModel;
