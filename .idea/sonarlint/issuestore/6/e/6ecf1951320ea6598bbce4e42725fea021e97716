@@ -1,0 +1,15 @@
+
+’
+java:S1130>"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(ç‘íáüÿÿÿÿ
+™
+java:S1130S"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(¥ê§…ıÿÿÿÿ8¿»²ôú/
+
+java:S1128"qRemove this unused import 'io.cucumber.messages.internal.com.google.common.base.StandardSystemProperty.USER_DIR'.(‹–”â8ÓÀôú/
+E
+java:S1068"*Remove this unused "LOGGER" private field.(ìóâÔûÿÿÿÿ
+Q
+java:S1068"6Remove this unused "MODEL_NULL_MESSAGE" private field.(³Ÿ¼×ıÿÿÿÿ
+
+java:S1488h"iImmediately return this expression instead of assigning it to the temporary variable "submitedFormResul".(îŠÜ
+†
+java:S1488m"iImmediately return this expression instead of assigning it to the temporary variable "submitedFormResul".(¤ƒäú8¬æ¿ôú/

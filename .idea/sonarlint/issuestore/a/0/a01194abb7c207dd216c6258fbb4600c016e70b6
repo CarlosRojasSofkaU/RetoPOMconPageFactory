@@ -1,0 +1,12 @@
+
+”
+java:S1130="wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(°—şê8š·ß÷ú/
+c	java:S100V"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÚÎ„
+
+java:S1128"qRemove this unused import 'io.cucumber.messages.internal.com.google.common.base.StandardSystemProperty.USER_DIR'.(‹–”â8©·ß÷ú/
+@
+java:S1068"*Remove this unused "LOGGER" private field.(„›—¨
+Q
+java:S1068"6Remove this unused "MODEL_NULL_MESSAGE" private field.(³Ÿ¼×ıÿÿÿÿ
+
+java:S1488W"iImmediately return this expression instead of assigning it to the temporary variable "submitedFormResul".(•Û
